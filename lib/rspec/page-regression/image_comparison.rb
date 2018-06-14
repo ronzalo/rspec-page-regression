@@ -71,7 +71,8 @@ module RSpec::PageRegression
       @iexpected = ChunkyPNG::Image.from_file(reference_screenshot)
       @itest     = ChunkyPNG::Image.from_file(test_screenshot)
 
-      return :size_mismatch if test_size != expected_size
+      #return :size_mismatch if test_size != expected_size
+      puts "Size Mismatch" if test_size != expected_size
       return :match         if pixels_match?
 
       create_difference_image
